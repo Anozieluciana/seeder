@@ -6,14 +6,14 @@ const jwt = require("jsonwebtoken")
 const verifiedModel = require("../Models/verifiedModel")
 const sendMail = require("../MailOption/mailer")
 const nodemailer = require("nodemailer")
-const { result } = require("@hapi/joi/lib/base")
+
 
 
 const transport = nodemailer.createTransport({
     service:"gmail",
     auth:{
-        user:"anoziechiderasilverlin@gmail.com",
-        pass:"silverlin"
+        user:process.env.USER,
+        pass:process.env.PASS
     }
 });
 
